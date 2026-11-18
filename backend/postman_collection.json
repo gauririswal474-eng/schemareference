@@ -1,0 +1,10 @@
+{
+  "info": { "name": "Schema Reference API", "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json" },
+  "variable": [ { "key": "baseUrl", "value": "http://localhost:5000" }, { "key": "userId", "value": "" } ],
+  "item": [
+    { "name": "Create user", "event": [ { "listen": "test", "script": { "type": "text/javascript", "exec": [ "pm.collectionVariables.set('userId', pm.response.json().data._id);" ] } } ],
+      "request": { "method": "POST", "header": [ { "key": "Content-Type", "value": "application/json" } ], "body": { "mode": "raw", "raw": "{\n  \"name\": \"Gauri\",\n  \"email\": \"gauri@example.com\"\n}" }, "url": { "raw": "{{baseUrl}}/users", "host": [ "{{baseUrl}}" ], "path": [ "users" ] } } },
+    { "name": "Create post", "request": { "method": "POST", "header": [ { "key": "Content-Type", "value": "application/json" } ], "body": { "mode": "raw", "raw": "{\n  \"title\": \"My first post\",\n  \"content\": \"Hello from Mongoose references\",\n  \"user\": \"{{userId}}\"\n}" }, "url": { "raw": "{{baseUrl}}/posts", "host": [ "{{baseUrl}}" ], "path": [ "posts" ] } } },
+    { "name": "Get all posts (with user info)", "request": { "method": "GET", "url": { "raw": "{{baseUrl}}/posts", "host": [ "{{baseUrl}}" ], "path": [ "posts" ] } } }
+  ]
+}

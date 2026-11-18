@@ -1,0 +1,14 @@
+* { box-sizing: border-box; }
+body { margin: 0; background: #f3f4f6; color: #1f2937; font-family: system-ui, Arial, sans-serif; }
+.container { max-width: 900px; margin: 0 auto; padding: 24px 16px 60px; }
+h1 { text-align: center; } h2 { margin: 0 0 10px; font-size: 18px; } .container > h2 { margin-top: 28px; }
+.forms { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.card { background: #fff; border-radius: 10px; box-shadow: 0 1px 4px rgba(0,0,0,.1); padding: 16px; display: flex; flex-direction: column; gap: 10px; }
+input, select, textarea { font: inherit; padding: 9px 10px; border: 1px solid #d1d5db; border-radius: 6px; width: 100%; }
+button { font: inherit; cursor: pointer; border: 0; border-radius: 6px; padding: 9px 14px; background: #2563eb; color: #fff; }
+button:disabled { opacity: .6; cursor: not-allowed; }
+.ok { color: #166534; margin: 0; } .err { color: #b91c1c; margin: 0; } .hint { color: #6b7280; margin: 0; }
+.error { background: #fee2e2; color: #991b1b; padding: 10px 14px; border-radius: 8px; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+.error button { padding: 4px 10px; }
+.posts { display: grid; gap: 12px; } .posts h3 { margin: 0; } .posts p { margin: 0; } small { color: #6b7280; }
+@media (max-width: 640px) { .forms { grid-template-columns: 1fr; } }
